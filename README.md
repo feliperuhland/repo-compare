@@ -16,6 +16,9 @@ For now, the program compare only:
 - Stars
 - Forks
 - Watchers
+- Created at
+- Updated at
+- Pushed at
 
 
 ## Instructions
@@ -37,8 +40,8 @@ $ ./compare -h
 
 ```sh
 $ ./compare.py mitsuhiko/flask django/django tornadoweb/tornado
-mitsuhiko/flask   : [++ ] 2
-django/django     : [+  ] 1
-tornadoweb/tornado: [   ] 0
+mitsuhiko/flask   : [++    ] 2
+django/django     : [+++   ] 3
+tornadoweb/tornado: [+     ] 1
 ```
 
