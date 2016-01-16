@@ -18,6 +18,9 @@ class Repo(object):
         self.stars = None
         self.forks = None
         self.subscribers = None
+        self.pushed_at = None
+        self.created_at = None
+        self.updated_at = None
         self._update_attrs(full_name)
 
     def _update_attrs(self, full_name):
@@ -31,13 +34,23 @@ class Repo(object):
         self.stars = _json['stargazers_count']
         self.forks = _json['forks_count']
         self.subscribers = _json['subscribers_count']
+        self.pushed_at = _json['pushed_at']
+        self.created_at = _json['created_at']
+        self.updated_at = _json['updated_at']
 
     def __repr__(self):
         return '<Repo: {}>'.format(self.full_name)
 
 
 class Report(object):
-    fields = ('stars', 'forks', 'subscribers')
+    fields = {
+        'created_at': min,
+        'forks': max,
+        'pushed_at': max,
+        'stars': max,
+        'subscribers': max,
+        'updated_at': max,
+    }
 
     def __init__(self, repos):
         self.repos = repos
