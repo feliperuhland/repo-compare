@@ -45,3 +45,9 @@ django/django     : [+++   ] 3
 tornadoweb/tornado: [+     ] 1
 ```
 
+- Test:
+
+```sh
+$ python -m unittest discover -s tests -v
+```
+
